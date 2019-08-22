@@ -1,3 +1,41 @@
+
+## Brandon's ReadMe
+
+This project was made with create react app.
+* node version: 10.15.3 (use `nvm` for easy switching of node versions)
+* yarn version: 1.13.0
+
+To run this project:
+1) `git clone git@github.com:cooperjbrandon/zyper-codechallenge.git`
+2) `cd zyper-codechallenge`
+3) `yarn install`
+4) `yarn start`
+5) navigate to `localhost:3000`. Play with that app.
+
+To run tests:
+1) Complete steps 1-4 above
+2) In another terminal window (in the same directory), run `yarn run cypress open`
+3) click on `main.spec.js` to run the test
+
+Background:
+I used `create-react-app` to quickly bootstrap a react application. UI framework is using Material-UI. I'm using `axios` to do network requests for a few reasons. First, a `404` response using `fetch` doesn't actually fail the `try` block, but using `axios` it does. Also, `fetch` requires doing `response.json()`, while axios does not. See [this article](https://medium.com/@thejasonfile/fetch-vs-axios-js-for-making-http-requests-2b261cdd3af5) for long explanation. Lastly, the testing framework `cypress` makes mocking really easy, however it mocks `XMLHttpRequests`, which `axios` uses under the hood. cypress doesn't mock `fetch` easily.
+
+I used `cypress` for tests because it's a super simple acceptance/integration testing frameworks that comes with a ton of apis and works right out of the box.
+
+Things to improve:
+* Beef up testing. For sake of time i only wrote a few tests. Possible tests to add:
+	* Make sure submit button is disabled when loading results.
+	* Test for a failure on the GET request
+	* Test for hitting 202s and making sure the code keeps trying to refetch the results.
+	* Testing for the checkbox
+* Pull out all the API requests into it's own service
+* If expanding this project, using react-router (or something similar) to add routing
+* Better input of usernames, possibly using something like [this library](https://www.npmjs.com/package/material-ui-chip-input)
+* Error boundaries in UI, so app doesn't crash completely on unforseen error
+
+
+## DEFAULT README FROM CREATE REACT APP
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
