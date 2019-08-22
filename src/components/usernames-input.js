@@ -43,6 +43,7 @@ const UsernamesInput = ({ loading, onSubmit, classes }) => {
         onChange={handleChange}
         margin="normal"
         className={classes.usernamesTextInput}
+        id="usernamesInput"
       />
 
       <FormControlLabel
@@ -56,7 +57,7 @@ const UsernamesInput = ({ loading, onSubmit, classes }) => {
         label="tick to list all accounts individually"
       />
 
-      <Button variant="contained" color="primary" disabled={buttonDisabled} onClick={onClick}>
+      <Button variant="contained" color="primary" disabled={buttonDisabled} onClick={onClick} id="submitButton">
          Submit
        </Button>
     </div>

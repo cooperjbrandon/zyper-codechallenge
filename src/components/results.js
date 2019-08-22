@@ -19,7 +19,7 @@ const styles = theme => ({
 });
 
 const Result = ({ result, classes }) => (
-  <div className={classes.result}>
+  <div className={`${classes.result} result`}>
     {Object.entries(result.output).map(([key, value], index) => {
       return <div key={index} className={classes.resultRow}>
         <Typography>{key}: </Typography>
